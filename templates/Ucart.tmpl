@@ -1,0 +1,229 @@
+{{ define "Ucart" }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>The Pharmacy Place</title>
+    <link rel="stylesheet" type="text/css" href="styles/common.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #c4ffdd70;
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header,
+        footer {
+            position: absolute;
+            width: 100%;
+            height: 75px;
+            background-color: #60f3c7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer {
+            height: 60px;
+            bottom: 0;
+        }
+
+        main {
+            height: auto;
+        }
+
+        .sub_header {
+            top: 75px;
+            width: 100%;
+            position: absolute;
+            background-color: #60f3c7;
+        }
+
+        .header_icon_anchor {
+            display: inline-table;
+            width: 50%;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        .header_logo {
+            height: 55px;
+            vertical-align: middle;
+        }
+
+        .title_header,
+        .copyright_footer {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .copyright_footer {
+            margin: 10px;
+        }
+
+        .header_items {
+            width: 70%;
+            display: inline-block;
+            text-align: right;
+            font-weight: lighter;
+        }
+
+        a {
+            cursor: pointer;
+            margin: 6px;
+            font-size: 1.1em;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #9837d8;
+            background-color: transparent;
+            cursor: pointer;
+            margin: 6px;
+            font-size: 1.1em;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .footer_icons {
+            width: 60%;
+            display: inline-block;
+            text-align: right;
+            font-weight: lighter;
+        }
+
+        .main_container {
+            position: absolute;
+            top: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 80%;
+        }
+
+        .main_container {
+            width: 100%;
+            height: 84%;
+        }
+
+        .four_space {
+            margin-left: 5em;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .tylenol {
+            width: 20%;
+            height: 30%;
+        }
+
+        .submit_button {
+            border: none;
+            color: #b11111;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .submit_button:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td,
+        td input,
+        textarea {
+            font-size: xx-large;
+        }
+
+        td input,
+        textarea {
+            width: 100%;
+            font-family: cursive;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header content -->
+    <header>
+        <div class="header_icon_anchor">
+            <a href="/">
+                <img src="https://marketplace.canva.com/EAE3EMJ7Jy8/1/0/1600w/canva-health-cross-pharmacy-symbol-line-vector-icon-logo-1Nzuoz-_5GM.jpg"
+                    alt="the pharmacy place logo" class="header_logo">
+                <p class="title_header">The e-Pharmacy Place</p>
+            </a>
+        </div>
+        <div class="header_items">
+            <a href="/ucart">View Medicine Cart!! </a>
+            <a href="/"> User Logout</a>
+        </div>
+    </header>
+    <div class="sub_header">
+        <hr>
+        <a href="/uview">View Medicines</a>
+    </div>
+    <!-- Body content -->
+    <div class="main_container">
+        <div>
+            <h1>The medicines you've added in your cart</h1>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Name</td>
+                        <td>Company</td>                        
+                        <td>Category</td>
+                        <td>Description</td>
+                        <td>Remove Item</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ range . }}
+                    <tr>
+                        <td>{{ .Id }}</td>
+                        <td> {{ .Name }} </td>
+                        <td>{{ .Company }} </td>
+                        <td>{{ .Category }} </td>
+                        <td>{{ .Description }} </td>
+                        <td><a href="/udelete?id={{ .Id }}">Remove from Cart</a></td>
+                    </tr>
+                    {{ end }}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Footer content -->
+    <footer>
+        <p class="copyright_footer">&copy;The Pharmacy Place (e-pharmacy)</p>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <div class="footer_icons">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/1200px-Twitter-logo.svg.png"
+                alt="Twitter logo" class="header_logo">
+            <img src="https://1000logos.net/wp-content/uploads/2021/04/Facebook-logo.png" alt="Facebook logo"
+                class="header_logo">
+        </div>
+    </footer>
+</body>
+
+</html>
+{{ end }}

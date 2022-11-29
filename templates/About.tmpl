@@ -1,4 +1,13 @@
-body {
+{{ define "About" }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>The Pharmacy Place</title>
+    <link rel="stylesheet" type="text/css" href="styles/common.css">
+    <style>
+    body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #c4ffdd70;
     height: 100%;
@@ -145,3 +154,44 @@ td input, textarea {
     font-family: cursive;
     border-radius: 10px;
 }
+    </style>
+</head>
+
+<body>
+    <!-- Header content -->
+    <header>
+        <div class="header_icon_anchor">
+            <a href="/">
+                <img src="https://marketplace.canva.com/EAE3EMJ7Jy8/1/0/1600w/canva-health-cross-pharmacy-symbol-line-vector-icon-logo-1Nzuoz-_5GM.jpg" alt="the pharmacy place logo" class="header_logo">
+                <p class="title_header">The e-Pharmacy Place</p>
+            </a>
+        </div>
+        <div class="header_items">
+            <a href="/alogin">Admin Login</a>
+            <a href="/ulogin">User Login</a>
+        </div>
+    </header>
+    <div class="sub_header">
+    </div>
+    <!-- Body content -->
+    <div class="main_container">
+        <div>
+            <h1>Welcome to the EPharmacy place!</h1>
+            <h2>A one stop access to all your medications!</h2>
+            <p>The new and more easy method to order prescription medicine online. A reliable brand with unobtrusive delivery. Order online right now.</p>
+        </div>
+    </div>
+    <!-- Footer content -->
+    <footer>
+        <p class="copyright_footer">&copy;The Pharmacy Place (e-pharmacy)</p>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <div class="footer_icons">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/1200px-Twitter-logo.svg.png" alt="Twitter logo" class="header_logo">
+            <img src="https://1000logos.net/wp-content/uploads/2021/04/Facebook-logo.png" alt="Facebook logo" class="header_logo">
+        </div>
+    </footer>
+</body>
+
+</html>
+{{ end }}
