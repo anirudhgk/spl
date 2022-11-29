@@ -62,7 +62,7 @@ CREATE TABLE `upload` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
-open the terminal at the location of your application (you downloaded from git) and run the command
+open the terminal at the location of your application (you downloaded from git) and run the command:
 go run main.go
 
 Tadaaa! your epharmacy application is running on the specified port.
